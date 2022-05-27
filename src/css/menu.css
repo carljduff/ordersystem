@@ -1,0 +1,25 @@
+.btn-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.menu-btn {
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.apps {
+   margin-left: 800px;
+   margin-top: 200px;
+}
