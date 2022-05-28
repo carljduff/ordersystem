@@ -1,23 +1,26 @@
 import '../css/menu.css'
 import React, { useState, useEffect } from 'react'
-const Menu = ({apps}) => {
-    const [show, setShow] = useState()
+import Appetizer from './Appetizer'
+
+const Menu = () => {
+    const [show, setShow] = useState("")
+    const [toggle, setToggle] = useState(false)
+ 
 
     const pasta = ["Penne, ", "Rigatoni, ", "Ravioli "]
-    // useEffect(() => {
 
-    //     const displayApps = () => {
-    //         setShow(true)
-    //     }
-    // })
+    
+    const showHandler = (set) => {
+            setShow(set)
+            setToggle(!toggle)
+    }
+
 
     return (
         <>
-
-        {show === "apps" && (
-   
-           <h1 className='apps'> {apps}</h1>
-            
+        
+        {toggle === true && show === "apps" && (
+           <Appetizer/>
         )}
 
 {show === "pasta" && (
@@ -27,7 +30,7 @@ const Menu = ({apps}) => {
 )}
 
         <div className="btn-wrapper">
-            <button onClick={() => setShow("apps")} className="menu-btn">Appitizers</button>
+            <button onClick={() => showHandler("apps")} className="menu-btn">Appetizers</button>
             <button onClick={() => setShow("pasta")}className="menu-btn">Pasta</button>
             <button className="menu-btn">Burgers</button>
             <button className="menu-btn">Chicken</button>
